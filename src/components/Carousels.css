@@ -1,0 +1,7 @@
+.carousel-item {
+  transition: opacity 1s ease-in-out;
+}
+img {
+  height: 300px;
+  width: 100%;
+}
