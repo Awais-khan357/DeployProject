@@ -1,7 +1,4 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavbarPage from "./components/NavbarPage";
 import Homepage from "./components/Homepage";
 import About from "./components/About";
 import IntroductionPage from "./components/IntroductionPage";
@@ -11,7 +8,6 @@ import Fines from "./components/Fines";
 function App() {
   return (
     <Router>
-      <NavbarPage />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<About />} />

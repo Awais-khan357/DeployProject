@@ -1,0 +1,20 @@
+.social-links span {
+  font-size: 18px;
+  display: inline-block;
+  background: blue;
+  color: #fff;
+  line-height: 1;
+  padding: 8px 0;
+  margin-right: 4px;
+  border-radius: 50%;
+  text-align: center;
+  width: 36px;
+  height: 36px;
+  transition: 0.3s;
+}
+
+.social-links span:hover {
+  background: #3ac162;
+  color: #fff;
+  text-decoration: none;
+}

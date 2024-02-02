@@ -1,39 +1,42 @@
-import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./NavbarPage.css";
 
+const navLinkStyle = {
+  color: "white",
+};
+
 function NavbarPage() {
   return (
-    <Navbar bg="light" text="dark" expand="lg">
+    <Navbar
+      style={{ backgroundColor: "rgb(57, 13, 97)", color: "white" }}
+      expand="lg"
+    >
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to="/" style={navLinkStyle}>
           Library Project
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/">
-              Home
+            <Nav.Link as={Link} to="/" style={navLinkStyle}>
+              HOME
             </Nav.Link>
-            <Nav.Link as={Link} to="/about">
-              About
+            <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              FIND
             </Nav.Link>
-            <NavDropdown title="Get Us Know" id="get-us-know-dropdown">
-              <NavDropdown.Item as={Link} to="/introduction">
-                Introduction
-              </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/message">
-                Message
-              </NavDropdown.Item>
-              <NavDropdown title="Get Us Know" id="get-us-know-dropdown">
-                <NavDropdown.Item as={Link} to="/introduction">
-                  Introduction
-                </NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/message">
-                  Message
-                </NavDropdown.Item>
-              </NavDropdown>
-            </NavDropdown>
+            <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              EXPLORE
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              USER GUIDE/MANUALS
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              VIRTUAL TOUR
+            </Nav.Link>
+            <Nav.Link as={Link} to="/about" style={navLinkStyle}>
+              CONNECT WITH US
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
