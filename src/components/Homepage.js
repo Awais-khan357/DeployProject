@@ -13,8 +13,8 @@ export default function Homepage() {
       <Carousels />
       <SearchBar />
       <Cards />
-      <SliderCards />
       <Badges />
+      <SliderCards />
       <Footer />
     </div>
   );

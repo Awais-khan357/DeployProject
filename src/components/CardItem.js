@@ -5,22 +5,19 @@ import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
 export default function CardItem({ heading, text, icon, color }) {
   return (
-    <Card className="card overflow">
-      <div className="header text-center bg-white">
-        <div
-          className="icon"
-          style={{ color: "white", backgroundColor: color }}
-        >
+    <Card className="cards overflow">
+      <div className="text-center bg-white">
+        <div className="cardIcon">
           <span>
             <FontAwesomeIcon icon={icon} />
           </span>
         </div>
-        <h5>{heading}</h5>
+        <h3>{heading}</h3>
       </div>
       <Card.Body>
         <p className="card-text">{text}</p>
         <div className="d-grid">
-          <button className="btn btn-success">
+          <button className="btn">
             Explore More <FontAwesomeIcon icon={faArrowRightLong} />
           </button>
         </div>

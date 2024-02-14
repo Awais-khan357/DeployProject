@@ -1,32 +1,27 @@
-.featured-block,
-.featured-block-text {
-  transition: all 0.5s ease;
-}
-
 .featured-block {
   text-align: center;
   transition: all 0.5s ease;
-  height: 230px;
+  height: 200px;
   padding: 15px;
   border-radius: 10px;
+  background-color: rgb(24, 24, 93);
+  color: white;
 }
-
-.featured-block-image {
-  transition: transform 0.5s ease;
-}
-
-.featured-block:not(:hover) {
-  transform: scale(1);
-  box-shadow: none;
+.badge-text {
+  color: white;
 }
 
 .featured-block:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
+  background-color: white;
+  color: rgb(24, 24, 93);
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.2);
 }
-
-.featured-block:hover .featured-block-image {
-  transform: translateZ(-20px);
+.featured-block:hover .icon {
+  color: rgb(24, 24, 93);
+}
+.featured-block:hover .badge-text {
+  color: rgb(24, 24, 93);
 }
 
 .d-block {
@@ -34,24 +29,9 @@
 }
 
 a {
-  color: var(--p-color);
   text-decoration: none;
 }
 
-.featured-block-text {
-  color: var(--primary-color);
-  font-size: var(--h5-font-size);
-  margin-top: 20px;
-  transition: transform 0.5s ease;
-}
-
-.featured-block:not(:hover) .featured-block-text {
-  transform: translateY(0);
-}
-
-.featured-block:hover .featured-block-text {
-  transform: translateY(-8px);
-}
 .icon {
   border-radius: 50%;
   display: table;
@@ -59,7 +39,9 @@ a {
   margin: 1rem auto 1rem;
   width: 100px;
   font-size: 3rem;
+  color: white;
 }
+
 .icon span {
   display: table-cell;
   vertical-align: center;

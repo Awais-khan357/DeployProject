@@ -12,13 +12,14 @@ const cardData = [
     heading: "OPAC",
     color: "blue",
     icon: faGear,
-    text: "Discover and search books and other library collection as it is an online database of material held by UOP library",
+    text: "(Online Public Acess Catalog) It is a matter of satisfaction that we have developed our web online public access catalogue (OPAC) that can help the users to reach our library bibliographic database worldwide and remotely accessible 24/7.",
   },
+
   {
-    heading: "HEC Digital Library",
-    icon: faAddressBook,
-    color: "green",
-    text: "Know about the databases and journals being subscribed by UOP library through HEC Digital Library Program",
+    heading: "UOP Thesis Repository",
+    icon: faBars,
+    color: "orange",
+    text: "UOP community produces massive amount of research each year in the form of theses, dissertations and project reports...",
   },
   {
     heading: "HEC E-Books Library",
@@ -27,19 +28,26 @@ const cardData = [
     text: "Find out e-books by world renowned publishers being subscribed by UOP library through HEC Digital Library Program",
   },
   {
-    heading: "UOP Thesis Repository",
-    icon: faBars,
-    color: "orange",
-    text: "UOP community produces massive amount of research each year in the form of theses, dissertations and project reports...",
+    heading: "HEC Digital Library",
+    icon: faAddressBook,
+    color: "green",
+    text: "Know about the databases and journals being subscribed by UOP library through HEC Digital Library Program",
   },
 ];
 
 function Cards() {
   return (
-    <Container fluid>
-      <Row className="g-2 mt-4">
+    <Container>
+      <Row className="g-5 mt-4">
+        <Col md={12} className="text-center" style={{}}>
+          <h1>SERVICES</h1>
+          <h6>
+            In order to accomplish our goals and objectives, we provide the
+            following services{" "}
+          </h6>
+        </Col>
         {cardData.map((cardItem) => (
-          <Col md={3}>
+          <Col md={6}>
             <CardItem
               heading={cardItem.heading}
               text={cardItem.text}

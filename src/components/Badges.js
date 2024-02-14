@@ -1,5 +1,5 @@
 import BadgeItem from "./BadgeItem";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import {
   faUsers,
   faStar,
@@ -21,10 +21,13 @@ const BadgeData = [
 
 export default function Badges() {
   return (
-    <Container fluid className="mt-5 bg-light">
+    <Container className="mt-5">
       <Row className="d-flex">
+        <Col md={12} className="text-center">
+          <h1>Quick Links</h1>
+        </Col>
         {BadgeData.map((item) => (
-          <BadgeItem text={item.text} icon={item.icon} color={item.color} />
+          <BadgeItem text={item.text} icon={item.icon} />
         ))}
       </Row>
     </Container>

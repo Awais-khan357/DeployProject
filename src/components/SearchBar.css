@@ -1,7 +1,10 @@
-.btn:hover {
-  background-color: rgb(231, 192, 19);
-}
-
 .selected {
   background-color: rgb(231, 192, 19);
+}
+.searchbac {
+  background-color: rgb(32, 32, 87);
+}
+.form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none;
 }

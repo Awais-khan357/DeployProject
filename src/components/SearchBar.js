@@ -19,7 +19,7 @@ export default function SearchBar() {
     setOpenCard(true);
   }
   return (
-    <Container fluid className="bg-dark">
+    <Container fluid className="searchbac">
       <Row className="text-center text-white">
         <Col
           md={{ span: 6, offset: 3 }}
@@ -40,6 +40,7 @@ export default function SearchBar() {
               >
                 Articles
               </div>
+              <div className="btn btn-white">Theses </div>
             </Card.Header>
             <Card.Body>
               {openCard ? (

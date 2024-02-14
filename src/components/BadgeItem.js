@@ -3,17 +3,17 @@ import { Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./BadgeItem.css";
 
-export default function BadgeItem({ icon, text, color }) {
+export default function BadgeItem({ icon, text }) {
   return (
-    <Col md={2} sm={6} xs={6} className="mb-4">
-      <div className="featured-block" style={{ backgroundColor: color }}>
+    <Col md={4} sm={6} xs={6} className="mt-5">
+      <div className="featured-block">
         <Link to="#" className="d-block">
           <div className="icon">
             <span>
               <FontAwesomeIcon icon={icon} />
             </span>
           </div>
-          <p className="featured-block-text text-white text-center">{text}</p>
+          <p className="badge-text text-center">{text}</p>
         </Link>
       </div>
     </Col>
