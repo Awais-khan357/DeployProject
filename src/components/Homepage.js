@@ -1,15 +1,14 @@
-import NavbarPage from "./NavbarPage";
+import Header from "./Header/Header";
 import Carousels from "./Carousels";
 import SearchBar from "./SearchBar";
 import Cards from "./Cards";
-import SliderCards from "./SliderCards";
 import Badges from "./Badges";
+import SliderCards from "./SliderCards";
 import Footer from "./Footer";
-
 export default function Homepage() {
   return (
     <div>
-      <NavbarPage />
+      <Header />
       <Carousels />
       <SearchBar />
       <Cards />

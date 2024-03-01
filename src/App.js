@@ -1,20 +1,28 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Homepage from "./components/Homepage";
-import About from "./components/About";
-import IntroductionPage from "./components/IntroductionPage";
-import Message from "./components/Message";
-import GeneralRules from "./components/GeneralRules";
-import Fines from "./components/Fines";
+import AboutLinks from "./components/AboutLinks/AboutLinks";
+import CollectionLinks from "./components/CollectionLinks/CollectionLinks";
+import ServicesLink from "./components/Services/ServicesLink";
+import FacilityLink from "./components/FacilitiesLinks/FacilityLink";
+import ReasearchLinks from "./components/Research/ReasearchLinks";
+import FormsLink from "./components/Forms/FormsLink";
+import Guidelines from "./components/GuideLineLinks/Guidelines";
+import NewsEvents from "./components/NewsEvents";
+import VirtualTour from "./components/VirtualTour";
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/introduction" element={<IntroductionPage />} />
-        <Route path="/message" element={<Message />} />
-        <Route path="/general-rules" element={<GeneralRules />} />
-        <Route path="/fines" element={<Fines />} />
+        <Route path="/aboutLink" element={<AboutLinks />} />
+        <Route path="/collectionLink" element={<CollectionLinks />} />
+        <Route path="/servicesLink" element={<ServicesLink />} />
+        <Route path="/facilityLink" element={<FacilityLink />} />
+        <Route path="/researchLink" element={<ReasearchLinks />} />
+        <Route path="/formLink" element={<FormsLink />} />
+        <Route path="/guideLine" element={<Guidelines />} />
+        <Route path="/newsEvent" element={<NewsEvents />} />
+        <Route path="/virtualTour" element={<VirtualTour />} />
       </Routes>
     </Router>
   );

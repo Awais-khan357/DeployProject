@@ -1,0 +1,25 @@
+.sidebar {
+  height: fit-content;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar nav ul li {
+  list-style: none;
+  margin-bottom: 10px;
+  border-left: 2px solid blue;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 22px;
+}
+
+.sidebar nav ul li.selected {
+  background-color: rgba(22, 9, 81, 0.957);
+  color: white;
+}
