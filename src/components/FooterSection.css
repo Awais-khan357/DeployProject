@@ -20,7 +20,14 @@ ul {
   line-height: 2;
 }
 
-ul li:hover {
-  background-color: #5fcf80;
-  color: white;
+.footer-top ul li svg {
+  font-size: 12px;
+  margin-right: 3px;
+}
+.footer-top ul li a {
+  color: rgb(255, 255, 255);
+}
+
+.footer-top ul li a:hover {
+  color: rgb(66, 157, 134);
 }

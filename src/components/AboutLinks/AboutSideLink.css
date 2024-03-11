@@ -1,0 +1,53 @@
+.sideLink-block {
+  text-align: center;
+  transition: all 0.5s ease;
+  border-radius: 10px;
+  background-color: rgb(24, 24, 93);
+  color: white;
+}
+.sideLink-text {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.sideLink-block:hover {
+  transform: scale(1.03);
+  background-color: white;
+  color: rgb(24, 24, 93);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.sideLink-block:hover .icons {
+  color: rgb(24, 24, 93);
+}
+.sideLink-block:hover .sideLink-text {
+  color: rgb(24, 24, 93);
+}
+
+.d-block {
+  display: block !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.icons {
+  border-radius: 50%;
+  display: table;
+  height: 90px;
+  margin: 1rem auto 1rem;
+  width: 100px;
+  font-size: 3rem;
+  color: white;
+}
+
+.icons span {
+  display: table-cell;
+  vertical-align: center;
+}
+.display {
+  display: block;
+}
+p {
+  font-weight: 500;
+}

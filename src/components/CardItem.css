@@ -3,7 +3,7 @@
 }
 .cards:hover {
   box-shadow: 5px 10px 20px 1px rgb(234, 155, 141) !important;
-  border-radius: 5%;
+  border-radius: 2%;
 }
 
 .overflow {
@@ -32,7 +32,7 @@
   display: table-cell;
   vertical-align: center;
 }
-p {
+.card-text {
   font-size: inherit;
   line-height: 1.6;
   font-weight: 500;
