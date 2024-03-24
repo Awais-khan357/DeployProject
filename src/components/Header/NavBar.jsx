@@ -17,21 +17,6 @@ export default function NavBar() {
               Home
             </Nav.Link>
             <DropDown
-              title="About Us"
-              items={[
-                { label: "History", page: "/aboutLink?tab=History" },
-                { label: "Introduction", page: "/aboutLink?tab=Introduction" },
-                {
-                  label: "Rules & Regulation",
-                  page: "/aboutLink?tab=Rules Regulation",
-                },
-                { label: "Library Timing", page: "/aboutLink?tab=Timing" },
-                { label: "Library Staff", page: "/aboutLink?tab=Staff" },
-                { label: "Contact Us", page: "/aboutLink?tab=Contact" },
-                { label: "FAQ", page: "/aboutLink?tab=Faq" },
-              ]}
-            />
-            <DropDown
               title="Collection"
               items={[
                 {
@@ -47,7 +32,7 @@ export default function NavBar() {
                   page: "/collectionLink?tab=Personal",
                 },
                 {
-                  label: "ManuScript Collection",
+                  label: "Manuscript Collection",
                   page: "/collectionLink?tab=ManuScript",
                 },
                 {
@@ -59,58 +44,145 @@ export default function NavBar() {
                   page: "/collectionLink?tab=Oriental",
                 },
                 {
-                  label: "MiddleEast Collection",
+                  label: "Middle East Collection",
                   page: "/collectionLink?tab=MiddleEast",
                 },
                 {
-                  label: "RareBook Collection",
+                  label: "Rare Book Collection",
                   page: "/collectionLink?tab=RareBook",
+                },
+                {
+                  label: "Newspaper Collection",
+                  page: "/collectionLink?tab=NewsPaper",
                 },
               ]}
             />
             <DropDown
               title="Services"
               items={[
+                { label: "OPAC", page: "/servicesLink?tab=OPAC" },
                 {
-                  label: "Search Collection",
-                  page: "/servicesLink?tab=Search",
+                  label: "Circulation Service",
+                  page: "/servicesLink?tab=Circulation Services",
                 },
                 {
                   label: "Digital Library",
                   page: "/servicesLink?tab=Digital Library",
                 },
                 {
-                  label: "Request A Book",
-                  page: "/servicesLink?tab=Request ABook",
+                  label: "SDI services",
+                  page: "/servicesLink?tab=SDI Services",
                 },
-                { label: "OPAC", page: "/servicesLink?tab=OPAC" },
+                {
+                  label: "Email Alerts",
+                  page: "/servicesLink?tab=Email Services",
+                },
+                {
+                  label: "Assistive technology Room",
+                  page: "/servicesLink?tab=Assertive technology",
+                },
                 {
                   label: "Union Catalogue",
                   page: "/servicesLink?tab=Union Catalog",
                 },
+                {
+                  label: "Reader Advisory Service",
+                  page: "/servicesLink?tab=Reader Advisory",
+                },
+                {
+                  label: "Search Collection",
+                  page: "/servicesLink?tab=Search",
+                },
+                {
+                  label: "Request A Book",
+                  page: "/servicesLink?tab=Request ABook",
+                },
+                {
+                  label: "Disability Room",
+                  page: "/servicesLink?tab=Disability Room",
+                },
+                {
+                  label: "Reference Service",
+                  page: "/servicesLink?tab=Reference Services",
+                },
+              ]}
+            />
+            <DropDown
+              title="Facilities"
+              items={[
+                {
+                  label: "Internet Lab",
+                  page: "/facilityLink?tab=Internet Lab",
+                },
+                { label: "Wifi", page: "/facilityLink?tab=Wifi" },
+                {
+                  label: "Study Cabin",
+                  page: "/facilityLink?tab=Study Cabin",
+                },
+                {
+                  label: "Discussion Room",
+                  page: "/facilityLink?tab=Discussion Room",
+                },
+                {
+                  label: "Study Carrels",
+                  page: "/facilityLink?tab=Study Carrels",
+                },
+                {
+                  label: "Research Cubicales",
+                  page: "/facilityLink?tab=Research Cubicales",
+                },
+                {
+                  label: "PhotoCopying",
+                  page: "/facilityLink?tab=PhotoCopying",
+                },
+                {
+                  label: "Printing",
+                  page: "/facilityLink?tab=Printing",
+                },
+                {
+                  label: "Scanning",
+                  page: "/facilityLink?tab=Scanning",
+                },
+                {
+                  label: "Filter Water",
+                  page: "/facilityLink?tab=Filter Water",
+                },
+                { label: "WashRooms", page: "/facilityLink?tab=WashRoom" },
               ]}
             />
             <DropDown
               title="Reasearch"
               items={[
                 { label: "Databases", page: "/researchLink?tab=Databases" },
-                { label: "APA Style", page: "/researchLink?tab=APA Style" },
                 {
-                  label: "Search Technique",
-                  page: "/researchLink?tab=Search Technique",
+                  label: "A to Z journals",
+                  page: "/researchLink?tab=Databases",
                 },
                 {
-                  label: "Citation Software",
-                  page: "/researchLink?tab=Citation Software",
+                  label: "Open Acess Book",
+                  page: "/researchLink?tab=Databases",
+                },
+                {
+                  label: "Citation Management Software",
+                  page: "/researchLink?tab=Citation Management Software",
+                },
+                {
+                  label: "Data Analysis tools",
+                  page: "/researchLink?tab=Data Analysis tool",
                 },
                 {
                   label: "Journal Citation Report",
                   page: "/researchLink?tab=Journal Citation Report",
                 },
                 {
-                  label: "EndNote Tool",
-                  page: "/researchLink?tab=EndNote Tool",
+                  label: "Citation Manuals",
+                  page: "/researchLink?tab=Citation Manuals",
                 },
+                {
+                  label: "Searching Technique",
+                  page: "/researchLink?tab=Search Technique",
+                },
+
                 { label: "Library Use", page: "/researchLink?tab=Library Use" },
               ]}
             />
@@ -129,7 +201,6 @@ export default function NavBar() {
                   label: "StudyRoom Form",
                   page: "/formLink?tab=StudyRoom",
                 },
-                { label: "Turnitin Form", page: "/formLink?tab=Turnitin" },
                 {
                   label: "VPN Request Form",
                   page: "/formLink?tab=Vpn Request",
@@ -140,10 +211,6 @@ export default function NavBar() {
             <DropDown
               title="GuideLines"
               items={[
-                {
-                  label: "Turnitin GuideLines",
-                  page: "/guideLine?tab=Turnitin",
-                },
                 {
                   label: "Vpn GuideLines",
                   page: "/guideLine?tab=Vpn",
@@ -157,37 +224,53 @@ export default function NavBar() {
                   page: "/guideLine?tab=MS Theses",
                 },
                 {
+                  label: "BS Theses GuideLines",
+                  page: "/guideLine?tab=BS Theses",
+                },
+                {
                   label: "Library HandBook GuideLines",
                   page: "/guideLine?tab=Library Handbook",
                 },
               ]}
             />
-            <DropDown
-              title="Facilities"
+            {/* <DropDown
+              title="Sections"
               items={[
                 {
-                  label: "Internet Lab",
-                  page: "/facilityLink?tab=Internet Lab",
-                },
-                { label: "Wifi", page: "/facilityLink?tab=Wifi" },
-                { label: "Study Cabin", page: "/facilityLink?tab=Study Cabin" },
-                {
-                  label: "Printer",
-                  page: "/facilityLink?tab=Printer",
+                  label: "Administrative",
+                  page: "/librarySection?tab=Administrative",
                 },
                 {
-                  label: "Scanner",
-                  page: "/facilityLink?tab=Scanner",
+                  label: "Technical Section",
+                  page: "/librarySection?tab=Technical",
                 },
                 {
-                  label: "Filter Water",
-                  page: "/facilityLink?tab=Filter Water",
+                  label: "Oriental Section",
+                  page: "/librarySection?tab=Oriental",
                 },
-                { label: "WashRooms", page: "/facilityLink?tab=WashRoom" },
+                {
+                  label: "Thesis & Dessertation",
+                  page: "/librarySection?tab=ThesisDessertation",
+                },
+              ]}
+            /> */}
+            <DropDown
+              title="About Us"
+              items={[
+                { label: "History", page: "/aboutLink?tab=History" },
+                { label: "Introduction", page: "/aboutLink?tab=Introduction" },
+                {
+                  label: "Rules & Regulation",
+                  page: "/aboutLink?tab=Rules Regulation",
+                },
+                { label: "Library Timing", page: "/aboutLink?tab=Timing" },
+                { label: "Library Staff", page: "/aboutLink?tab=Staff" },
+                { label: "Contact Us", page: "/aboutLink?tab=Contact" },
+                { label: "FAQ", page: "/aboutLink?tab=Faq" },
               ]}
             />
             <Nav.Link as={Link} to="/newsEvent">
-              News/Events
+              Events
             </Nav.Link>
             <Nav.Link as={Link} to="/virtualTour">
               Virtual Tour

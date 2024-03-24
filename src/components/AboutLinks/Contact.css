@@ -1,3 +1,15 @@
+.contact-section .contact-tag {
+  margin-bottom: 40px;
+  padding: 12px;
+}
+
+.contact-icon .badges {
+  -webkit-box-shadow: -2px 2px 14px -1px rgba(242, 206, 242, 0.97);
+  -moz-box-shadow: -2px 2px 14px -1px rgba(242, 206, 242, 0.97);
+  box-shadow: -2px 2px 14px -1px rgba(242, 206, 242, 0.97);
+  margin-top: 18px;
+}
+
 .contact-icon .my-custom-icon .svg-inline--fa {
   height: 2.2rem;
   margin-right: 18px;

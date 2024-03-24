@@ -1,7 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap";
-import search from "./images/search.png";
 import tools from "./images/tools.png";
-import portal from "./images/portal.png";
+import Analysis from "./images/Analysis.png";
 import support from "./images/support.png";
 import skills from "./images/skills.png";
 import news from "./images/news.png";
@@ -11,7 +10,7 @@ import "./CheckCard.css";
 const BadgeData = [
   {
     id: 1,
-    img: portal,
+    img: Analysis,
     heading: "UOP Reasearch Portal",
     text: "Supercharge your WordPress hosting with detailed website analytics, marketing tools",
   },

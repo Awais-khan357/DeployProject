@@ -5,7 +5,7 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 export default function MapSection() {
   const [mapPosition, setMapPosition] = useState([34.021224, 71.482345]);
   return (
-    <Col md={6} sm={12} className="vh-100 map-section">
+    <Col md={6} sm={12} className="map-section">
       <div className="mapContainer">
         <h1 className="mt-3 mb-3">Central Library</h1>
         <MapContainer

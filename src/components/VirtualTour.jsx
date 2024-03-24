@@ -1,15 +1,17 @@
+import Heading from "./AboutLinks/Heading";
 export default function VirtualTour() {
   return (
     <div>
-      VirtualTour Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text ever
-      since the 1500s, when an unknown VirtualTour took a galley of type and
-      scrambled it to make a type specimen book. It has survived not only five
-      centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of
-      Letraset sheets containing Lorem Ipsum passages, and more recently with
-      desktop publishing software like Aldus PageMaker including versions of
-      Lorem Ipsum.
+      <Heading heading="Virtual tour" />
+      <iframe
+        width="100%"
+        height="640"
+        frameborder="0"
+        allow="xr-spatial-tracking; gyroscope; accelerometer"
+        allowfullscreen
+        scrolling="no"
+        src="https://kuula.co/share/collection/7cXKm?logo=1&info=1&fs=1&vr=0&sd=1&autorotate=0.26&thumbs=1"
+      ></iframe>
     </div>
   );
 }

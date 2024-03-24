@@ -4,16 +4,17 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import image1 from "./images/image1.jpg";
 import image2 from "./images/image2.jpg";
 import image3 from "./images/image3.jpg";
-import image4 from "./images/image4.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "./Carousels.css";
 const data = [
-  { image: image1, caption: "This is first Slide " },
-  { image: image2, caption: "This is Second Slide " },
-  { image: image3, caption: "This is Third Slide " },
-  { image: image4, caption: "This is fourth Slide " },
+  { image: image1 },
+  { image: image2 },
+  { image: image3 },
+  { image: image1 },
+  { image: image2 },
+  { image: image3 },
 ];
 
 export default function Carousels() {
@@ -26,8 +27,8 @@ export default function Carousels() {
   return (
     <>
       <Swiper
-        spaceBetween={30}
-        centeredSlides={true}
+        slidesPerView={3}
+        spaceBetween={20}
         autoplay={{
           delay: 4500,
           disableOnInteraction: true,
@@ -35,15 +36,23 @@ export default function Carousels() {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
-        modules={[Autoplay, Pagination, Navigation]}
+        breakpoints={{
+          320: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        }}
+        modules={[Autoplay, Pagination]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
         {data.map((item) => (
           <SwiperSlide key={item.caption}>
             <img src={item.image} alt={item.caption} />
-            <h1 className="caption text-white">{item.caption}</h1>
           </SwiperSlide>
         ))}
         <div className="autoplay-progress" slot="container-end">

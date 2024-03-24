@@ -54,9 +54,9 @@ export default function AboutLinks() {
   return (
     <>
       <Header />
-      <Container fluid className="about-link mt-5 px-4">
+      <Container fluid className="about-link mt-4 px-4">
         <Row>
-          <Col md={3}>
+          <Col md={3} className="mb-5">
             <div className="nav-box">
               <h4>About List</h4>
               <nav className="main-nav">

@@ -7,6 +7,13 @@ import DigitalLibrary from "./DigitalLibrary";
 import OPAC from "./OPAC";
 import RequestABook from "./RequestABook";
 import UnionCatalog from "./UnionCatalog";
+import SDIServices from "./SDIServices";
+import EmailServices from "./EmailServices";
+import DisabilityService from "./DisabilityService";
+import ReaderService from "./ReaderService";
+import AssertiveService from "./AssertiveService";
+import CirculationService from "./CirculationService";
+import ReferenceService from "./ReferenceService";
 import "../Links.css";
 const links = [
   "Search",
@@ -14,6 +21,13 @@ const links = [
   "Request ABook",
   "OPAC",
   "Union Catalog",
+  "SDI Services",
+  "Email Services",
+  "Disability Room",
+  "Reader Advisory",
+  "Assertive technology",
+  "Circulation Services",
+  "Reference Services",
 ];
 export default function ServicesLink() {
   const location = useLocation();
@@ -35,6 +49,20 @@ export default function ServicesLink() {
         return <OPAC />;
       case "Union Catalog":
         return <UnionCatalog />;
+      case "SDI Services":
+        return <SDIServices />;
+      case "Email Services":
+        return <EmailServices />;
+      case "Disability Room":
+        return <DisabilityService />;
+      case "Reader Advisory":
+        return <ReaderService />;
+      case "Assertive technology":
+        return <AssertiveService />;
+      case "Circulation Services":
+        return <CirculationService />;
+      case "Reference Services":
+        return <ReferenceService />;
       default:
         return null;
     }
@@ -69,7 +97,7 @@ export default function ServicesLink() {
             </div>
           </Col>
           <Col md={9} className="border mb-3">
-            <p className="content">{renderContent()}</p>
+            {renderContent()}
           </Col>
         </Row>
       </Container>

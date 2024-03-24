@@ -9,11 +9,7 @@
   padding-bottom: 12px;
 }
 
-#footer .footer-top .footer-links {
-  margin-bottom: 30px;
-}
-
-ul {
+.footer-top ul {
   list-style: none;
   padding: 0;
   margin-left: 20px;
@@ -26,8 +22,10 @@ ul {
 }
 .footer-top ul li a {
   color: rgb(255, 255, 255);
+  text-decoration: none;
 }
 
 .footer-top ul li a:hover {
   color: rgb(66, 157, 134);
+  border-bottom: 3px solid rgb(66, 157, 134);
 }

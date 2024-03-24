@@ -10,6 +10,7 @@ import Personal from "./Personal";
 import Orientation from "./Orientation";
 import MiddleEast from "./MiddleEast";
 import RareBook from "./RareBook";
+import NewsPaper from "./NewsPaper";
 import "../Links.css";
 const links = [
   "General",
@@ -20,6 +21,7 @@ const links = [
   "Oriental",
   "MiddleEast",
   "RareBook",
+  "NewsPaper",
 ];
 export default function CollectionLinks() {
   const location = useLocation();
@@ -47,6 +49,8 @@ export default function CollectionLinks() {
         return <RareBook />;
       case "Serial":
         return <Serial />;
+      case "NewsPaper":
+        return <NewsPaper />;
       default:
         return null;
     }
@@ -80,9 +84,7 @@ export default function CollectionLinks() {
               </nav>
             </div>
           </Col>
-          <Col md={9} className="border mb-3">
-            <p className="content">{renderContent()}</p>
-          </Col>
+          {renderContent()}
         </Row>
       </Container>
     </>

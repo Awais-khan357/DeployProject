@@ -1,15 +1,93 @@
-export default function VpnForm() {
+import { Row, Col } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Heading from "../AboutLinks/Heading";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+
+const validationSchema = yup
+  .object({
+    name: yup.string().required("Missing Name"),
+    department: yup.string().required("Missing department Name"),
+    book: yup.string().required("Missing Book Name"),
+    email: yup.string().required("Missing Email"),
+    phone: yup
+      .string()
+      .required("Missing Phone No")
+      .matches(/^\d+$/, "Invalid Phone No"),
+  })
+  .required();
+
+const Input = ({ placeholder, register, errors }) => {
   return (
-    <p>
-      VpnForm is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </p>
+    <Form.Group className="mb-3 input-group-lg">
+      <Form.Control {...register()} type="text" placeholder={placeholder} />
+      {errors && <span className="text-danger">{errors.message}</span>}
+    </Form.Group>
+  );
+};
+
+export default function VpnForm() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(validationSchema),
+    defaultValues: {
+      name: "",
+      department: "",
+      book: "",
+      email: "",
+      phone: "",
+    },
+  });
+
+  const onSubmit = (data) => {
+    console.log("data", data);
+  };
+  return (
+    <Col md={7}>
+      <Row>
+        <Col md={12} lg={12} sm={12}>
+          <Heading heading="Vpn Request Form" />
+        </Col>
+        <Col sm={12} lg={12} md={12} className="g-3 mb-5">
+          <Form onSubmit={handleSubmit(onSubmit)}>
+            <Input
+              placeholder="Your Name"
+              register={() => register("name")}
+              errors={errors.name}
+            />
+            <Input
+              placeholder="Department Name"
+              register={() => register("department")}
+              errors={errors.department}
+            />
+            <Input
+              placeholder="Book Name"
+              register={() => register("book")}
+              errors={errors.book}
+            />
+            <Input
+              placeholder="Enter Email"
+              register={() => register("email")}
+              errors={errors.email}
+            />
+            <Input
+              placeholder="Phone No"
+              register={() => register("phone")}
+              errors={errors.phone}
+            />
+            <button
+              className="btn btn-primary form-control py-2 text-white"
+              type="submit"
+            >
+              Submit
+            </button>
+          </Form>
+        </Col>
+      </Row>
+    </Col>
   );
 }

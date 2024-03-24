@@ -1,13 +1,12 @@
 import timing from "../images/timing.jpg";
 import { Col } from "react-bootstrap";
-import "./History.css";
-import AboutSideLink from "./AboutSideLink";
+import Heading from "./Heading";
 export default function Timing() {
   return (
     <>
-      <Col md={6} className="border mb-3 px-4">
+      <Col md={8} className="mb-3 px-4">
         <div className="content">
-          <h5 className="mt-3">Library Timing</h5>
+          <Heading heading="Library Timing" />
           <img src={timing} className="img-fluid" />
           <div className="mt-3" style={{ fontWeight: "90px" }}>
             Welcome to University of Peshawar Library. This is a
@@ -17,7 +16,7 @@ export default function Timing() {
             the growth of scholarship and innovative research in the region.
           </div>
           <div className="mt-3">
-            The space supplements Habib University’s vision of innovation,
+            The space supplements Peshawar University’s vision of innovation,
             creativity and knowledge creation. Our vision is “Promoting and
             facilitating the culture of critical inquiry, research, scholarship,
             collaboration and self-directed lifelong learning”.
@@ -27,9 +26,6 @@ export default function Timing() {
             14500 books, 329,000 e-books and 11500 Journals.
           </div>
         </div>
-      </Col>
-      <Col md={3}>
-        <AboutSideLink />
       </Col>
     </>
   );

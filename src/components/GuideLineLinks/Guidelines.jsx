@@ -1,40 +1,38 @@
-import { Link, useParams, useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import VpnGuide from "./VpnGuide";
-import TurnitinGuide from "./TurnitinGuide";
 import MsGuide from "./MsGuide";
 import PhdGuide from "./PhdGuide";
+import BSThesis from "./BSThesis";
 import HandBookGuide from "./HandBookGuide";
 import "../Links.css";
 const links = [
-  "Turnitin",
   "Vpn",
   "PHD Theses",
   "MS Theses",
+  "BS Theses",
   "Library Handbook",
 ];
 export default function Guidelines() {
   const location = useLocation();
   const tabParam = new URLSearchParams(location.search).get("tab");
-  const [selectedContent, setSelectedContent] = useState(
-    tabParam || "Turnitin"
-  );
+  const [selectedContent, setSelectedContent] = useState(tabParam || "Vpn");
   useEffect(() => {
-    setSelectedContent(tabParam || "Turnitin");
+    setSelectedContent(tabParam || "Vpn");
   }, [tabParam]);
 
   const renderContent = () => {
     switch (selectedContent) {
-      case "Turnitin":
-        return <TurnitinGuide />;
       case "Vpn":
         return <VpnGuide />;
       case "PHD Theses":
         return <PhdGuide />;
       case "MS Theses":
         return <MsGuide />;
+      case "BS Theses":
+        return <BSThesis />;
       case "Library Handbook":
         return <HandBookGuide />;
       default:
@@ -70,9 +68,7 @@ export default function Guidelines() {
               </nav>
             </div>
           </Col>
-          <Col md={9} className="border mb-3">
-            <p className="content">{renderContent()}</p>
-          </Col>
+          {renderContent()}
         </Row>
       </Container>
     </>

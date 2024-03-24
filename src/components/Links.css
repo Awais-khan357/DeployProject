@@ -20,39 +20,48 @@
   padding-bottom: 15px;
   margin-bottom: 15px;
 }
+
 .nav-box ul {
   list-style: none;
   padding: 0;
   margin-left: 5px;
   line-height: 2;
 }
-.main-nav {
-  li {
-    background-color: rgb(241, 247, 246);
-    padding: 8px;
-    color: #020202;
-    font-size: 1.04rem;
-    padding-left: 20px;
-    text-align: left;
-    transform: lowercase;
-  }
-  .link {
-    cursor: pointer;
-  }
+
+.main-nav li {
+  background-color: rgb(241, 247, 246);
+  padding: 8px;
+  color: #020202;
+  font-size: 1.04rem;
+  padding-left: 20px;
+  text-align: left;
+  transform: lowercase;
 }
 
-.list-hover-slide {
-  li {
-    position: relative;
-    transition: 0.35s ease color;
-  }
+.main-nav .list-hover-slide a {
+  text-decoration: none !important;
 }
+
+.main-nav .link {
+  cursor: pointer;
+}
+
+.list-hover-slide li {
+  position: relative;
+  transition: 0.35s ease color;
+}
+
 .list-hover-slide li.active {
   background-color: #091961;
   color: white;
 }
+
 .list-hover-slide li:hover {
   background-color: rgb(241, 247, 246);
   color: red;
   transition: 0.35s ease color;
+}
+
+.content {
+  text-align: justify;
 }

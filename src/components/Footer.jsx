@@ -6,7 +6,7 @@ import MapSection from "./MapSection";
 
 const footerData = [
   {
-    id: "useful-links", // Add a unique identifier for the section
+    id: "useful-links",
     links: [
       "Useful Link",
       "Library Home",
@@ -20,7 +20,7 @@ const footerData = [
     ],
   },
   {
-    id: "forms", // Add a unique identifier for the section
+    id: "forms",
     links: [
       "Forms",
       "VPN Request Form",

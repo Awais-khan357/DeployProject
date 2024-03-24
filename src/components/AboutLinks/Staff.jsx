@@ -26,11 +26,6 @@ const staff = [
     name: "Sir Aslam",
     pic: admin,
   },
-  {
-    id: 4,
-    name: "Sir Wisal",
-    pic: admin,
-  },
 ];
 
 export default function Staff() {

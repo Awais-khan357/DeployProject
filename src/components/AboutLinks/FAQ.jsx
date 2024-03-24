@@ -1,7 +1,7 @@
 import { Col } from "react-bootstrap";
-import faq from "../images/faq.jpg";
 import "./FAQ.css";
 import { useState } from "react";
+import Heading from "./Heading";
 const faqs = [
   {
     title: "How to get Library MemberShip Card?",
@@ -24,10 +24,9 @@ export default function FAQ() {
   const [isOpen, setIsOpen] = useState(null);
   return (
     <>
-      <Col md={8} className="border mb-3 px-4">
-        <h5 className="mt-3">Frequently Asked Question</h5>
-        <img src={faq} className="img-fluid" alt="faq" />
-        <div className="accordions mt-5">
+      <Col md={8} className="px-4">
+        <Heading heading="Frequently Asked Questions" />
+        <div className="accordions mt-5 mb-5">
           {faqs.map((ques, i) => (
             <AccordianItem
               title={ques.title}

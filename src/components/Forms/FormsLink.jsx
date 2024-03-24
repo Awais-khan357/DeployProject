@@ -5,13 +5,11 @@ import Header from "../Header/Header";
 import BookPurchase from "./BookPurchase";
 import MemberShipForm from "./MemberShipForm";
 import StudyRoom from "./StudyRoom";
-import TurnitinForm from "./TurnitinForm";
 import VpnForm from "./VpnForm";
 import WifiForm from "./WifiForm";
 import "../Links.css";
 const links = [
   "Book Purchase",
-  "Turnitin",
   "Vpn Request",
   "MemberShip",
   "StudyRoom",
@@ -34,8 +32,6 @@ export default function FormsLink() {
         return <MemberShipForm />;
       case "StudyRoom":
         return <StudyRoom />;
-      case "Turnitin":
-        return <TurnitinForm />;
       case "Vpn Request":
         return <VpnForm />;
       case "Wifi":
@@ -73,9 +69,7 @@ export default function FormsLink() {
               </nav>
             </div>
           </Col>
-          <Col md={9} className="border mb-3">
-            <p className="content">{renderContent()}</p>
-          </Col>
+          {renderContent()}
         </Row>
       </Container>
     </>

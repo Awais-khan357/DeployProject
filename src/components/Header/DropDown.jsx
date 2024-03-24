@@ -7,7 +7,7 @@ export default function DropDown({ items, title }) {
   const { dropdownItems, addDropdownItem } = useDropdownContext();
 
   useEffect(() => {
-    addDropdownItem(items); // Set the new items directly
+    addDropdownItem(items);
   }, []);
 
   return (

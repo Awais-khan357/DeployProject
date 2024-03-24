@@ -1,45 +1,37 @@
-import { Container, Row, Col } from "react-bootstrap";
-import {
-  faUsers,
-  faStar,
-  faCircleExclamation,
-  faBook,
-  faDisplay,
-  faArrowsToCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import "./AboutSideLink.css";
+import { Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import openAcess from "../images/openAcess.png";
+import catalog from "../images/catalog.png";
+import education from "../images/education.png";
+import thesis from "../images/thesis.png";
+import "./AboutSideLink.css";
 
 const BadgeData = [
-  { icon: faUsers, text: "Open Acess Journals" },
-  { icon: faArrowsToCircle, text: "HEC Corner" },
-  { icon: faBook, text: "MOOCs" },
-  { icon: faCircleExclamation, text: "Union Catalog" },
+  { img: openAcess, text: "Open Acess Journals" },
+  { img: education, text: "HEC Corner" },
+  { img: catalog, text: "Union Catalog" },
+  { img: thesis, text: "Open Acess Thesis" },
 ];
 
 export default function AboutSideLink() {
   return (
     <Row>
-      <h4 className="text-center">Quick Link</h4>
+      <h4 className="text-center quick-head">Quick Link</h4>
       {BadgeData.map((item) => (
-        <SideLinkItem text={item.text} key={item.text} icon={item.icon} />
+        <QuickLink text={item.text} key={item.text} img={item.img} />
       ))}
     </Row>
   );
 }
-
-function SideLinkItem({ icon, text }) {
+function QuickLink({ img, text }) {
   return (
-    <Col md={12} className="mt-0">
-      <div className="sideLink-block">
-        <Link to="#" className="d-block">
-          <div className="icons">
-            <span>
-              <FontAwesomeIcon icon={icon} />
-            </span>
+    <Col md={12} lg={12} sm={12} className="mt-2 mb-2">
+      <div className="Link-block justify-content-center">
+        <Link to="/newsEvent" className="d-block">
+          <div className="img">
+            <img src={img} alt={text} />
           </div>
-          <p className="sideLink-text text-center">{text}</p>
+          <p className="Link-text text-center">{text}</p>
         </Link>
       </div>
     </Col>

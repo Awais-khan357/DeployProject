@@ -7,14 +7,22 @@ import StudyCabin from "./StudyCabin";
 import WashRoom from "./WashRoom";
 import Water from "./Water";
 import Wifi from "./Wifi";
+import DiscussionRoom from "./DiscussionRoom";
+import PhotoCopy from "./PhotoCopy";
+import ResCubicals from "./ResCubicals";
+import StudyCarrels from "./StudyCarrels";
 import "../Links.css";
 import Printer from "./Printer";
 import Scanner from "./Scanner";
 const links = [
   "Internet Lab",
   "Wifi",
-  "Printer",
-  "Scanner",
+  "Discussion Room",
+  "Study Carrels",
+  "Research Cubicales",
+  "PhotoCopying",
+  "Printing",
+  "Scanning",
   "Filter Water",
   "WashRoom",
 ];
@@ -34,9 +42,17 @@ export default function FacilityLink() {
         return <Internet />;
       case "Wifi":
         return <Wifi />;
-      case "Printer":
+      case "Discussion Room":
+        return <DiscussionRoom />;
+      case "Study Carrels":
+        return <StudyCarrels />;
+      case "Research Cubicales":
+        return <ResCubicals />;
+      case "PhotoCopying":
+        return <PhotoCopy />;
+      case "Printing":
         return <Printer />;
-      case "Scanner":
+      case "Scanning":
         return <Scanner />;
       case "Filter Water":
         return <Water />;
