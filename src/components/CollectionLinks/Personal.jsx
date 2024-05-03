@@ -11,7 +11,7 @@ export default function Personal() {
       </p>
       <p>
         <strong>
-          <span>H.M. PERCEIVAL</span>
+          <span>Fazle Samdani Collection</span>
         </strong>
       </p>
       <p>
@@ -25,7 +25,7 @@ export default function Personal() {
       </p>
       <p>
         <strong>
-          <span>H.M. PERCEIVAL</span>
+          <span>Mir WaliUllah Collection</span>
         </strong>
       </p>
       <p>
@@ -37,7 +37,7 @@ export default function Personal() {
       </p>
       <p>
         <strong>
-          <span>CH. SHAHAB-UD-DIN</span>
+          <span>Otaq-e-Iran</span>
         </strong>
       </p>
       <p>
@@ -49,7 +49,7 @@ export default function Personal() {
       </p>
       <p>
         <strong>
-          <span>MAULVI MAHBUB ALAM</span>
+          <span>Saqeba-e-Noor</span>
         </strong>
       </p>
       <p>
@@ -62,7 +62,7 @@ export default function Personal() {
       </p>
       <p>
         <strong>
-          <span>DR. A.C. WOOLNER</span>
+          <span>Khatir Ghaznavi</span>
         </strong>
       </p>
       <p>
