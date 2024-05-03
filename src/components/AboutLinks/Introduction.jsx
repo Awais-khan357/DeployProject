@@ -17,15 +17,20 @@ export default function Introduction() {
           </div>
           <h5 className="mt-3">Aim</h5>
           <div className="mt-3">
-            The space supplements Peshawar University’s vision of innovation,
-            creativity and knowledge creation. Our vision is “Promoting and
-            facilitating the culture of critical inquiry, research, scholarship,
-            collaboration and self-directed lifelong learning”.
+            The library aims to support the academic work by providing right
+            information to the right people at right time including students,
+            faculty and staff of UOP.
           </div>
           <h5 className="mt-3">Mission</h5>
           <div className="mt-3">
-            Currently, the library houses a unique and diverse collection of
-            14500 books, 329,000 e-books and 11500 Journals.
+            To serve the advancement of teaching, learning and research within
+            the university by providing solutions to the information needs of
+            users through efficient, effective and innovative services. To
+            herald the eagerly anticipated advancement within our society
+            through the realm of information technology, promising an
+            everlasting metamorphosis in the lives of our people technology.
+            Let's grow together. Let's learn, teach, share and support each
+            other..
           </div>
         </div>
       </Col>

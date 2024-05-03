@@ -4,6 +4,12 @@
     float: left;
   }
 }
+.subPage-Font {
+  font-family: ElsevierGulliver, Georgia, Times New Roman, Times, STIXGeneral,
+    Cambria Math, Lucida Sans Unicode, Microsoft Sans Serif, Segoe UI Symbol,
+    Arial Unicode MS, serif !important;
+  text-align: justify;
+}
 
 .col-md-3 .nav-box {
   --default-color-rgb: 33, 37, 41;

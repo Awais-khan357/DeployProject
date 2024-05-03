@@ -2,32 +2,24 @@ import { Link, useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
-import Search from "./Search";
 import DigitalLibrary from "./DigitalLibrary";
 import OPAC from "./OPAC";
-import RequestABook from "./RequestABook";
 import UnionCatalog from "./UnionCatalog";
 import SDIServices from "./SDIServices";
-import EmailServices from "./EmailServices";
-import DisabilityService from "./DisabilityService";
 import ReaderService from "./ReaderService";
 import AssertiveService from "./AssertiveService";
 import CirculationService from "./CirculationService";
 import ReferenceService from "./ReferenceService";
 import "../Links.css";
 const links = [
-  "Search",
-  "Digital Library",
-  "Request ABook",
   "OPAC",
+  "Digital Library",
   "Union Catalog",
   "SDI Services",
-  "Email Services",
-  "Disability Room",
-  "Reader Advisory",
-  "Assertive technology",
+  "Assistive technology",
   "Circulation Services",
   "Reference Services",
+  "Reader Advisory",
 ];
 export default function ServicesLink() {
   const location = useLocation();
@@ -39,25 +31,17 @@ export default function ServicesLink() {
 
   const renderContent = () => {
     switch (selectedContent) {
-      case "Search":
-        return <Search />;
       case "Digital Library":
         return <DigitalLibrary />;
-      case "Request ABook":
-        return <RequestABook />;
       case "OPAC":
         return <OPAC />;
       case "Union Catalog":
         return <UnionCatalog />;
       case "SDI Services":
         return <SDIServices />;
-      case "Email Services":
-        return <EmailServices />;
-      case "Disability Room":
-        return <DisabilityService />;
       case "Reader Advisory":
         return <ReaderService />;
-      case "Assertive technology":
+      case "Assistive technology":
         return <AssertiveService />;
       case "Circulation Services":
         return <CirculationService />;
@@ -71,7 +55,7 @@ export default function ServicesLink() {
   return (
     <>
       <Header />
-      <Container fluid className="mt-5">
+      <Container fluid className="mt-5 subPage-Font">
         <Row>
           <Col md={3}>
             <div className="nav-box">
@@ -96,7 +80,7 @@ export default function ServicesLink() {
               </nav>
             </div>
           </Col>
-          <Col md={9} className="border mb-3">
+          <Col md={6} className="mb-3">
             {renderContent()}
           </Col>
         </Row>

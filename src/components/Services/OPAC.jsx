@@ -1,15 +1,26 @@
 export default function OPAC() {
   return (
-    <div>
-      OPAC Ipsum is simply dummy text of the printing and typesetting industry.
-      Lorem Ipsum has been the industry's standard dummy text ever since the
-      1500s, when an unknown printer took a galley of type and scrambled it to
-      make a type specimen book. It has survived not only five centuries, but
-      also the leap into electronic typesetting, remaining essentially
-      unchanged. It was popularised in the 1960s with the release of Letraset
-      sheets containing Lorem Ipsum passages, and more recently with desktop
-      publishing software like Aldus PageMaker including versions of Lorem
-      Ipsum.
-    </div>
+    <>
+      <p>
+        <strong>
+          <span>Online Public Access Catalogue(OPAC)</span>
+        </strong>
+      </p>
+      <p>
+        The University of Central Library offers its own Online Public Access
+        Catalog (OPAC) to facilitate resource discovery. Through the OPAC, users
+        can efficiently search, browse, and locate materials. It serves as a
+        vital tool for academic research and information retrieval within the
+        university community.
+      </p>
+      <p>
+        <strong>
+          <span>Visit OPAC</span>
+        </strong>
+      </p>
+      <p className="text-center">
+        <a href="http://opac.uop.edu.pk:1009/">Visit UOP OPAC</a>.
+      </p>
+    </>
   );
 }

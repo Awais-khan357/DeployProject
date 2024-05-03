@@ -3,7 +3,7 @@ import "./CardItem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
 
-export default function CardItem({ heading, text, icon }) {
+export default function CardItem({ heading, text, icon, link }) {
   return (
     <Card className="cards overflow">
       <div className="text-center bg-white">
@@ -17,7 +17,7 @@ export default function CardItem({ heading, text, icon }) {
       <Card.Body>
         <p className="card-text">{text}</p>
         <div className="d-grid">
-          <button className="btn">
+          <button className="btn" onClick={() => window.open(link, "_blank")}>
             Explore More <FontAwesomeIcon icon={faArrowRightLong} />
           </button>
         </div>

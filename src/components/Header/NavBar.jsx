@@ -40,20 +40,16 @@ export default function NavBar() {
                   page: "/collectionLink?tab=Serial",
                 },
                 {
+                  label: "Newspaper Collection",
+                  page: "/collectionLink?tab=NewsPaper",
+                },
+                {
                   label: "Oriental Collection",
                   page: "/collectionLink?tab=Oriental",
                 },
                 {
                   label: "Middle East Collection",
                   page: "/collectionLink?tab=MiddleEast",
-                },
-                {
-                  label: "Rare Book Collection",
-                  page: "/collectionLink?tab=RareBook",
-                },
-                {
-                  label: "Newspaper Collection",
-                  page: "/collectionLink?tab=NewsPaper",
                 },
               ]}
             />
@@ -74,10 +70,6 @@ export default function NavBar() {
                   page: "/servicesLink?tab=SDI Services",
                 },
                 {
-                  label: "Email Alerts",
-                  page: "/servicesLink?tab=Email Services",
-                },
-                {
                   label: "Assistive technology Room",
                   page: "/servicesLink?tab=Assertive technology",
                 },
@@ -90,66 +82,14 @@ export default function NavBar() {
                   page: "/servicesLink?tab=Reader Advisory",
                 },
                 {
-                  label: "Search Collection",
-                  page: "/servicesLink?tab=Search",
-                },
-                {
-                  label: "Request A Book",
-                  page: "/servicesLink?tab=Request ABook",
-                },
-                {
-                  label: "Disability Room",
-                  page: "/servicesLink?tab=Disability Room",
-                },
-                {
                   label: "Reference Service",
                   page: "/servicesLink?tab=Reference Services",
                 },
               ]}
             />
-            <DropDown
-              title="Facilities"
-              items={[
-                {
-                  label: "Internet Lab",
-                  page: "/facilityLink?tab=Internet Lab",
-                },
-                { label: "Wifi", page: "/facilityLink?tab=Wifi" },
-                {
-                  label: "Study Cabin",
-                  page: "/facilityLink?tab=Study Cabin",
-                },
-                {
-                  label: "Discussion Room",
-                  page: "/facilityLink?tab=Discussion Room",
-                },
-                {
-                  label: "Study Carrels",
-                  page: "/facilityLink?tab=Study Carrels",
-                },
-                {
-                  label: "Research Cubicales",
-                  page: "/facilityLink?tab=Research Cubicales",
-                },
-                {
-                  label: "PhotoCopying",
-                  page: "/facilityLink?tab=PhotoCopying",
-                },
-                {
-                  label: "Printing",
-                  page: "/facilityLink?tab=Printing",
-                },
-                {
-                  label: "Scanning",
-                  page: "/facilityLink?tab=Scanning",
-                },
-                {
-                  label: "Filter Water",
-                  page: "/facilityLink?tab=Filter Water",
-                },
-                { label: "WashRooms", page: "/facilityLink?tab=WashRoom" },
-              ]}
-            />
+            <Nav.Link as={Link} to="/facility">
+              Facilities
+            </Nav.Link>
             <DropDown
               title="Reasearch"
               items={[
@@ -269,8 +209,11 @@ export default function NavBar() {
                 { label: "FAQ", page: "/aboutLink?tab=Faq" },
               ]}
             />
-            <Nav.Link as={Link} to="/newsEvent">
+            <Nav.Link as={Link} to="/events">
               Events
+            </Nav.Link>
+            <Nav.Link as={Link} to="/museum">
+              Museum
             </Nav.Link>
             <Nav.Link as={Link} to="/virtualTour">
               Virtual Tour

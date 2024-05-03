@@ -1,15 +1,14 @@
-export default function Orientation() {
+import { Col } from "react-bootstrap";
+export default function Oriental() {
   return (
-    <p>
-      Orientation Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text ever
-      since the 1500s, when an unknown printer took a galley of type and
-      scrambled it to make a type specimen book. It has survived not only five
-      centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of
-      Letraset sheets containing Lorem Ipsum passages, and more recently with
-      desktop publishing software like Aldus PageMaker including versions of
-      Lorem Ipsum.
-    </p>
+    <Col md={8} sm={12} className="collection">
+      <p>
+        Like all other subdivisions, the oriental department catches the
+        attention of its visitor by having its rich amount of collection in
+        oriental languages. Now the users are getting their require information
+        in their own terminologies. Besides this book of Urdu, Arabic Persian
+        Pashto etc. are maintained in this section.
+      </p>
+    </Col>
   );
 }

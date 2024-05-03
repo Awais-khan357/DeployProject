@@ -1,28 +1,16 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import General from "./General";
 import Special from "./Special";
 import ManuScript from "./ManuScript";
+import NewsPaper from "./NewsPaper";
 import Serial from "./Serial";
 import Personal from "./Personal";
 import Orientation from "./Orientation";
 import MiddleEast from "./MiddleEast";
-import RareBook from "./RareBook";
-import NewsPaper from "./NewsPaper";
-import "../Links.css";
-const links = [
-  "General",
-  "Special",
-  "Personal",
-  "ManuScript",
-  "Serial",
-  "Oriental",
-  "MiddleEast",
-  "RareBook",
-  "NewsPaper",
-];
+import "./CollectionLinks.css";
 export default function CollectionLinks() {
   const location = useLocation();
   const tabParam = new URLSearchParams(location.search).get("tab");
@@ -45,8 +33,6 @@ export default function CollectionLinks() {
         return <Orientation />;
       case "MiddleEast":
         return <MiddleEast />;
-      case "RareBook":
-        return <RareBook />;
       case "Serial":
         return <Serial />;
       case "NewsPaper":
@@ -58,35 +44,23 @@ export default function CollectionLinks() {
 
   return (
     <>
-      <Header />
-      <Container fluid className="mt-5">
-        <Row>
-          <Col md={3}>
-            <div className="nav-box">
-              <h4>Collection List</h4>
-              <nav className="main-nav">
-                <ul className="unstyled list-hover-slide">
-                  {links.map((link, index) => (
-                    <Link
-                      key={index}
-                      to={`/collectionLink?tab=${encodeURIComponent(link)}`}
-                    >
-                      <li
-                        className={`mt-2 ${
-                          selectedContent === link ? "active" : ""
-                        }`}
-                      >
-                        {` ${link} Collection`}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </nav>
+      <>
+        <Header />
+        <Container fluid>
+          <Row>
+            <div className="page-header py-4">
+              <div className="py-5">
+                <h1 className="text-white text-center mb-3">
+                  {`${selectedContent} Collection`}
+                </h1>
+              </div>
             </div>
-          </Col>
-          {renderContent()}
-        </Row>
-      </Container>
+          </Row>
+          <Row className="justify-content-md-center mt-5">
+            {renderContent()}
+          </Row>
+        </Container>
+      </>
     </>
   );
 }

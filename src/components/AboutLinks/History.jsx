@@ -41,8 +41,7 @@ export default function History() {
           worth mentioning features that certainly take in a first-choice
           library of the locality. The fort of knowledge bears the precious
           manuscripts’, subscribed periodicals, and continuous acquisitions are
-          the qualities of information center. The following are the prominent
-          librarians who served as librarian:
+          the qualities of information center.
         </div>
       </div>
     </Col>

@@ -1,15 +1,48 @@
+import { Col } from "react-bootstrap";
+import img from "../images/img.jpg";
 export default function Special() {
   return (
-    <p>
-      Special Ipsum is simply dummy text of the printing and typesetting
-      industry. Lorem Ipsum has been the industry's standard dummy text ever
-      since the 1500s, when an unknown printer took a galley of type and
-      scrambled it to make a type specimen book. It has survived not only five
-      centuries, but also the leap into electronic typesetting, remaining
-      essentially unchanged. It was popularised in the 1960s with the release of
-      Letraset sheets containing Lorem Ipsum passages, and more recently with
-      desktop publishing software like Aldus PageMaker including versions of
-      Lorem Ipsum.
-    </p>
+    <Col md={8} sm={12} className="collection">
+      <h4>Reference Collection</h4>
+      <p>
+        This service is offered to all library users through file maker pro LMS
+        software The resources borrowed from the library shall be returned on or
+        before the due date during library working hours. Its terms and
+        conditions are mentioned in Library Rules and Regulations.
+      </p>
+      <img src={img} alt="first" className="img-fluid" />
+      <h4>Theses Collection</h4>
+      <p>
+        This service is offered to all library users through file maker pro LMS
+        software The resources borrowed from the library shall be returned on or
+        before the due date during library working hours. Its terms and
+        conditions are mentioned in Library Rules and Regulations.
+      </p>
+      <img src={img} alt="first" className="img-fluid" />
+      <h4>Chinese Collection</h4>
+      <p>
+        This service is offered to all library users through file maker pro LMS
+        software The resources borrowed from the library shall be returned on or
+        before the due date during library working hours. Its terms and
+        conditions are mentioned in Library Rules and Regulations.
+      </p>
+      <img src={img} alt="first" className="img-fluid" />
+      <h4>Afghanistan Collection</h4>
+      <p>
+        This service is offered to all library users through file maker pro LMS
+        software The resources borrowed from the library shall be returned on or
+        before the due date during library working hours. Its terms and
+        conditions are mentioned in Library Rules and Regulations.
+      </p>
+      <img src={img} alt="first" className="img-fluid" />
+      <h4>Reports Collection</h4>
+      <p>
+        This service is offered to all library users through file maker pro LMS
+        software The resources borrowed from the library shall be returned on or
+        before the due date during library working hours. Its terms and
+        conditions are mentioned in Library Rules and Regulations.
+      </p>
+      <img src={img} alt="first" className="img-fluid" />
+    </Col>
   );
 }
