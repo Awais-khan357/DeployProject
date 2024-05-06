@@ -1,29 +1,67 @@
 import { Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import Heading from "../AboutLinks/Heading";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const validationSchema = yup
   .object({
-    name: yup.string().required("Missing Name"),
-    department: yup.string().required("Missing department Name"),
-    book: yup.string().required("Missing Book Name"),
-    email: yup.string().required("Missing Email"),
+    fname: yup
+      .string()
+      .required("Missing first Name")
+      .matches(/^[^0-9][a-zA-Z0-9]*$/, "String Type Invalid"),
+    lname: yup
+      .string()
+      .required("Missing last Name")
+      .matches(/^[^0-9][a-zA-Z0-9]*$/, "String Type Invalid"),
+    department: yup
+      .string()
+      .required("Missing department Name")
+      .matches(/^[^0-9][a-zA-Z0-9\s]*$/, "String Type Invalid"),
+    email: yup
+      .string()
+      .required("Missing Email")
+      .matches(
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+        "Invalid Email Format"
+      ),
     phone: yup
       .string()
       .required("Missing Phone No")
       .matches(/^\d+$/, "Invalid Phone No"),
+    regno: yup
+      .string()
+      .required("Missing status")
+      .matches(/^[a-zA-Z0-9-]+$/, "Status type invalid"),
   })
   .required();
 
-const Input = ({ placeholder, register, errors }) => {
+const Input = ({ placeholder, register, errors, label, format }) => {
   return (
-    <Form.Group className="mb-3 input-group-lg">
-      <Form.Control {...register()} type="text" placeholder={placeholder} />
-      {errors && <span className="text-danger">{errors.message}</span>}
-    </Form.Group>
+    <Col sm={12} lg={6} md={6}>
+      <Form.Group className="mb-3 input-group-lg">
+        <Form.Label>{label}</Form.Label>
+        <Form.Control {...register()} type="text" placeholder={placeholder} />
+        {errors && <span className="text-danger">{errors.message}</span>}
+        <Form.Text muted>{format}</Form.Text>
+      </Form.Group>
+    </Col>
+  );
+};
+
+const TextInput = ({ register, errors, label }) => {
+  return (
+    <Col sm={12} lg={6} md={6}>
+      <Form.Group className="mb-3 input-group-lg">
+        <Form.Label>{label}</Form.Label>
+        <Form.Control
+          {...register()}
+          type="textarea"
+          style={{ height: "100px" }}
+        />
+        {errors && <span className="text-danger">{errors.message}</span>}
+      </Form.Group>
+    </Col>
   );
 };
 
@@ -35,9 +73,10 @@ export default function WifiForm() {
   } = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      name: "",
+      fname: "",
+      lname: "",
       department: "",
-      book: "",
+      regno: "",
       email: "",
       phone: "",
     },
@@ -47,47 +86,61 @@ export default function WifiForm() {
     console.log("data", data);
   };
   return (
-    <Col md={7}>
-      <Row>
-        <Col md={12} lg={12} sm={12}>
-          <Heading heading="Wifi Password Form" />
-        </Col>
-        <Col sm={12} lg={12} md={12} className="g-3 mb-5">
-          <Form onSubmit={handleSubmit(onSubmit)}>
-            <Input
-              placeholder="Your Name"
-              register={() => register("name")}
-              errors={errors.name}
-            />
-            <Input
-              placeholder="Department Name"
-              register={() => register("department")}
-              errors={errors.department}
-            />
-            <Input
-              placeholder="Book Name"
-              register={() => register("book")}
-              errors={errors.book}
-            />
-            <Input
-              placeholder="Enter Email"
-              register={() => register("email")}
-              errors={errors.email}
-            />
-            <Input
-              placeholder="Phone No"
-              register={() => register("phone")}
-              errors={errors.phone}
-            />
+    <>
+      <h4 style={{ marginTop: "19px", marginBottom: "58px" }}>
+        Wifi Request Form
+      </h4>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        <Row className="g-2">
+          <Input
+            label="First Name *"
+            register={() => register("fname")}
+            errors={errors.fname}
+          />
+          <Input
+            label="Last Name *"
+            register={() => register("lname")}
+            errors={errors.lastname}
+          />
+          <Input
+            label="Department Name *"
+            register={() => register("department")}
+            errors={errors.department}
+          />
+          <Input
+            label="Registration No *"
+            register={() => register("regno")}
+            errors={errors.regno}
+          />
+          <Input
+            label="Email *"
+            register={() => register("email")}
+            errors={errors.email}
+            format="example@gmail.com"
+          />
+          <Input
+            label="Phone *"
+            register={() => register("phone")}
+            errors={errors.phone}
+            format="0000-1234567"
+          />
+        </Row>
+        <Row className="justify-content-center mt-3">
+          <Col md={3}>
             <button
-              className="btn btn-primary form-control py-2 text-white"
+              className="btn form-control"
+              style={{
+                color: "#fff",
+                borderColor: "#0a1551",
+                backgroundColor: "#0a1551",
+              }}
               type="submit"
             >
               Submit
             </button>
-          </Form>
-        </Col>
-      </Row>
-    </Col>
+          </Col>
+        </Row>
+      </Form>
+    </>
   );
 }

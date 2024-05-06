@@ -7,27 +7,46 @@ import MapSection from "./MapSection";
 const footerData = [
   {
     id: "useful-links",
-    links: [
+    label: [
       "Useful Link",
       "Library Home",
       "Online Public Access Catalog",
       "UOP Union Catalog",
-      "UOP E-Library",
+      "UOP Theses repository",
       "Free Online Journals",
       "HEC Digital Library",
       "HEC E-books Library",
       "Contact Us",
     ],
+    links: [
+      "",
+      "http://localhost:5173/",
+      "http://opac.uop.edu.pk:1009/",
+      "/servicesLink?tab=Union%20Catalog",
+      "http://121.52.147.5:4000/",
+      "https://doaj.org/",
+      "http://www.digitallibrary.edu.pk/",
+      "http://www.digitallibrary.edu.pk/books.html",
+      "/aboutLink?tab=Contact",
+    ],
   },
   {
     id: "forms",
-    links: [
+    label: [
       "Forms",
-      "VPN Request Form",
-      "WIFI Password Reset/ Set Form",
-      "Library MemeberShip Form",
-      "Books Purchase Request Form",
-      "SDI Inquiry Form",
+      "Student Membership Form",
+      "Staff Membership Form",
+      "Book Purchase Form",
+      "Vpn Request Form",
+      "Wifi Form",
+    ],
+    links: [
+      "",
+      "/formLink?tab=MemberShip",
+      "/formLink?tab=StaffMemberShip",
+      "/formLink?tab=Book%20Purchase",
+      "/formLink?tab=Vpn%20Request",
+      "/formLink?tab=Wifi",
     ],
   },
 ];
@@ -40,7 +59,7 @@ export default function Footer() {
           {footerData.map((footerSection) => (
             <FooterSection
               key={footerSection.id}
-              footer={footerSection.links}
+              footerSection={footerSection}
             />
           ))}
           <MapSection />

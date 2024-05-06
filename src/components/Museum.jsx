@@ -72,7 +72,7 @@ export default function Museum() {
           <CustomCard
             title="Encoded Meaning in the Page"
             image={part2}
-            text="In a 2016 interview when asked why he made A Humument, Tom Phillips responded: “It’s inexhaustible when you find a big text that’s full of words to find other things in it."
+            text="In a 2016 interview when asked why he made A Humument, Tom Phillips responded: “It's inexhaustible when you find a big text that's full of words to find other things in it."
           />
           <Col md={3} className="d-flex align-items-center">
             <div className="w-100 mesuemLinks">

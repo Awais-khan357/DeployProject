@@ -1,20 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
+import styles from "./FormsLink.module.css";
 import BookPurchase from "./BookPurchase";
 import MemberShipForm from "./MemberShipForm";
-import StudyRoom from "./StudyRoom";
 import VpnForm from "./VpnForm";
 import WifiForm from "./WifiForm";
-import "../Links.css";
-const links = [
-  "Book Purchase",
-  "Vpn Request",
-  "MemberShip",
-  "StudyRoom",
-  "Wifi",
-];
+import StaffMemberShip from "./StaffMemberShip";
 export default function FormsLink() {
   const location = useLocation();
   const tabParam = new URLSearchParams(location.search).get("tab");
@@ -30,8 +23,8 @@ export default function FormsLink() {
         return <BookPurchase />;
       case "MemberShip":
         return <MemberShipForm />;
-      case "StudyRoom":
-        return <StudyRoom />;
+      case "StaffMemberShip":
+        return <StaffMemberShip />;
       case "Vpn Request":
         return <VpnForm />;
       case "Wifi":
@@ -44,32 +37,20 @@ export default function FormsLink() {
   return (
     <>
       <Header />
-      <Container fluid className="mt-5">
+      <Container fluid className={styles.back}>
         <Row>
-          <Col md={3}>
-            <div className="nav-box">
-              <h4>Forms List</h4>
-              <nav className="main-nav">
-                <ul className="unstyled list-hover-slide">
-                  {links.map((link, index) => (
-                    <Link
-                      key={index}
-                      to={`/formLink?tab=${encodeURIComponent(link)}`}
-                    >
-                      <li
-                        className={`mt-2 ${
-                          selectedContent === link ? "active" : ""
-                        }`}
-                      >
-                        {`${link} Form`}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </nav>
+          <div className={`py-4 ${styles.formHeader}`}>
+            <div className="py-5">
+              <h1 className="text-white text-center mb-3">
+                {`${selectedContent} Form`}
+              </h1>
             </div>
+          </div>
+        </Row>
+        <Row className="justify-content-md-center mt-5">
+          <Col md={7} className={styles.background}>
+            {renderContent()}
           </Col>
-          {renderContent()}
         </Row>
       </Container>
     </>

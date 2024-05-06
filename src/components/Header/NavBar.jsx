@@ -130,12 +130,16 @@ export default function NavBar() {
               title="Forms/Reservation"
               items={[
                 {
-                  label: "Book Purchase Form",
-                  page: "/formLink?tab=Book Purchase",
+                  label: "Student MemberShip Form",
+                  page: "/formLink?tab=MemberShip",
                 },
                 {
-                  label: "Library MemberShip Form",
-                  page: "/formLink?tab=MemberShip",
+                  label: "Staff MemberShip Form",
+                  page: "/formLink?tab=StaffMemberShip",
+                },
+                {
+                  label: "Book Purchase Form",
+                  page: "/formLink?tab=Book Purchase",
                 },
                 {
                   label: "StudyRoom Form",
@@ -173,27 +177,6 @@ export default function NavBar() {
                 },
               ]}
             />
-            {/* <DropDown
-              title="Sections"
-              items={[
-                {
-                  label: "Administrative",
-                  page: "/librarySection?tab=Administrative",
-                },
-                {
-                  label: "Technical Section",
-                  page: "/librarySection?tab=Technical",
-                },
-                {
-                  label: "Oriental Section",
-                  page: "/librarySection?tab=Oriental",
-                },
-                {
-                  label: "Thesis & Dessertation",
-                  page: "/librarySection?tab=ThesisDessertation",
-                },
-              ]}
-            /> */}
             <DropDown
               title="About Us"
               items={[

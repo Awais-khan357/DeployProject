@@ -7,7 +7,7 @@ export default function BadgeItem({ icon, text }) {
   return (
     <Col md={4} sm={6} xs={6} className="mt-5">
       <div className="featured-block">
-        <Link to="#" className="d-block">
+        <Link to="https://doaj.org/" className="d-block">
           <div className="icon">
             <span>
               <FontAwesomeIcon icon={icon} />

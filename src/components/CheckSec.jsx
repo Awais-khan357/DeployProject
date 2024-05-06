@@ -9,12 +9,24 @@ import thesis from "./images/thesis.png";
 import "./CheckSection.css";
 
 const BadgeData = [
-  { img: openAcess, text: "Open Acess Journals" },
-  { img: education, text: "HEC Corner" },
-  { img: Ranking, text: "University Ranking" },
-  { img: Elearning, text: "MOOCs" },
-  { img: catalog, text: "Union Catalog" },
-  { img: thesis, text: "Open Acess Thesis" },
+  { img: openAcess, text: "Open Acess Journals", link: "https://doaj.org/" },
+  { img: education, text: "HEC Corner", link: "/heccorner" },
+  {
+    img: Ranking,
+    text: "University Ranking",
+    link: "https://www.hec.gov.pk/english/universities/pages/rank.aspx",
+  },
+  {
+    img: Elearning,
+    text: "Online Learning platform",
+    link: "https://www.pcmag.com/picks/best-online-learning-services",
+  },
+  {
+    img: catalog,
+    text: "Union Catalog",
+    link: "/servicesLink?tab=Union%20Catalog",
+  },
+  { img: thesis, text: "Open Acess Thesis", link: "https://oatd.org/" },
 ];
 
 export default function checkSection() {
@@ -29,24 +41,26 @@ export default function checkSection() {
             className="content d-flex flex-column justify-content-center mb-5"
           >
             <div className="content">
-              <h2>Voluptatem dignissimos provident quasi</h2>
+              <h3>Discover Quick Links</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis
-                aute irure dolor in reprehenderit
+                Explore our library's vast resources and services. Get quick
+                access to information, catalogs, and more. Discover a world of
+                knowledge at your fingertips. Peruse our library's comprehensive
+                selection of resources and services. Access information swiftly,
+                including catalogs and more. Engage in an expedition through a
+                wealth of knowledge, readily accessible at your convenience.
               </p>
-              <button className="btn about-btn">See All</button>
             </div>
           </Col>
-          <Col
-            md={8}
-            lg={8}
-            sm={12}
-            className="badge-img d-flex align-items-center"
-          >
+          <Col md={8} lg={8} sm={12} className="badge-img d-flex">
             <Row>
               {BadgeData.map((item) => (
-                <BadgeItem text={item.text} key={item.text} img={item.img} />
+                <BadgeItem
+                  text={item.text}
+                  key={item.text}
+                  link={item.link}
+                  img={item.img}
+                />
               ))}
             </Row>
           </Col>
@@ -56,11 +70,11 @@ export default function checkSection() {
   );
 }
 
-function BadgeItem({ img, text }) {
+function BadgeItem({ img, text, link }) {
   return (
-    <Col md={4} lg={4} sm={6} className="mt-3">
-      <div className="featured-block justify-content-center">
-        <Link to="/newsEvent" className="d-block">
+    <Col md={4} lg={4} sm={6}>
+      <div className="featured-block justify-content-center mt-2">
+        <Link to={link} className="d-block">
           <div className="img">
             <img src={img} alt={text} />
           </div>

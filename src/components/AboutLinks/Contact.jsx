@@ -3,15 +3,19 @@ import Form from "react-bootstrap/Form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
+import contact from "../images/contact.png";
 import "./Contact.css";
-import Heading from "./Heading";
 export default function Contact() {
   return (
-    <Col md={8}>
-      <Container className="contact-section">
+    <Col md={8} className="contact-section">
+      <Container>
         <Row>
-          <Col md={12} lg={12} sm={12}>
-            <Heading heading="Get In Touch" />
+          <Col md={12} lg={12} sm={12} className="text-center mt-3">
+            <img src={contact} alt="contact" />
+            <h2 className="mt-4">CONTACT US</h2>
+            <p className="text-center text-muted">
+              Please fill this form in a decent manner
+            </p>
           </Col>
           <Col sm={12} lg={7} md={7} className="g-3 mb-5">
             <Form>

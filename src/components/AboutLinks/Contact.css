@@ -1,8 +1,8 @@
-.contact-section .contact-tag {
-  margin-bottom: 40px;
-  padding: 12px;
+.contact-section {
+  background-color: rgb(236, 244, 240);
+  border-radius: 1rem;
+  margin-bottom: 20px;
 }
-
 .contact-icon .badges {
   -webkit-box-shadow: -2px 2px 14px -1px rgba(242, 206, 242, 0.97);
   -moz-box-shadow: -2px 2px 14px -1px rgba(242, 206, 242, 0.97);

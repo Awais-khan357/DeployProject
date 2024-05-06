@@ -7,7 +7,8 @@ export default function MapSection() {
   return (
     <Col md={6} sm={12} className="map-section">
       <div className="mapContainer">
-        <h1 className="mt-3 mb-3">Central Library</h1>
+        <h2 className="mt-4">Central Library</h2>
+        <hr />
         <MapContainer
           center={mapPosition}
           zoom={12}

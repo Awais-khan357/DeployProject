@@ -1,26 +1,30 @@
 import { Row, Col } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
-import Heading from "../AboutLinks/Heading";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 const validationSchema = yup
   .object({
-    name: yup
+    fname: yup
       .string()
-      .required("Missing Name")
+      .required("Missing first Name")
       .matches(/^[^0-9][a-zA-Z0-9]*$/, "String Type Invalid"),
-    Fname: yup
+    lname: yup
       .string()
-      .required("Missing Name")
+      .required("Missing last Name")
       .matches(/^[^0-9][a-zA-Z0-9]*$/, "String Type Invalid"),
+    fathername: yup
+      .string()
+      .required("Missing father Name")
+      .matches(/^[^0-9][a-zA-Z0-9\s]*$/, "String Type Invalid"),
     department: yup
       .string()
       .required("Missing department Name")
-      .matches(/^[^0-9][a-zA-Z0-9]*$/, "String Type Invalid"),
+      .matches(/^[^0-9][a-zA-Z0-9\s]*$/, "String Type Invalid"),
     semester: yup.string().required("Missing semester"),
-    address: yup.string().required("Missing address"),
+    RAddress: yup.string().required("Missing Residential address"),
+    PAddress: yup.string().required("Missing Permanent address"),
     email: yup
       .string()
       .required("Missing Email")
@@ -32,27 +36,41 @@ const validationSchema = yup
       .string()
       .required("Missing Phone No")
       .matches(/^\d+$/, "Invalid Phone No"),
-    date: yup.string().required("Missing Date"),
+    dateFrom: yup.string().required("Missing Date"),
+    dateTo: yup.string().required("Missing Date"),
   })
   .required();
 
-const Input = ({ placeholder, register, errors }) => {
+const Input = ({ placeholder, register, errors, label, format }) => {
   return (
     <Col sm={12} lg={6} md={6}>
       <Form.Group className="mb-3 input-group-lg">
+        <Form.Label>{label}</Form.Label>
+        <Form.Control {...register()} type="text" placeholder={placeholder} />
+        {errors && <span className="text-danger">{errors.message}</span>}
+        <Form.Text muted>{format}</Form.Text>
+      </Form.Group>
+    </Col>
+  );
+};
+
+const AddressInput = ({ placeholder, register, errors, label }) => {
+  return (
+    <Col sm={12} lg={12} md={12}>
+      <Form.Group className="mb-3 input-group-lg">
+        <Form.Label>{label}</Form.Label>
         <Form.Control {...register()} type="text" placeholder={placeholder} />
         {errors && <span className="text-danger">{errors.message}</span>}
       </Form.Group>
     </Col>
   );
 };
-
-function FormDate({ placeholder, register, errors, label }) {
+function FormDate({ register, errors, label }) {
   return (
     <Col sm={12} lg={6} md={6}>
-      <Form.Group className="mb-3 input-group-lg">
+      <Form.Group className="mb-3 input-group-md">
         <Form.Label>{label}</Form.Label>
-        <Form.Control {...register()} type="date" placeholder={placeholder} />
+        <Form.Control {...register()} type="date" />
         {errors && <span className="text-danger">{errors.message}</span>}
       </Form.Group>
     </Col>
@@ -67,14 +85,17 @@ export default function MemberShipForm() {
   } = useForm({
     resolver: yupResolver(validationSchema),
     defaultValues: {
-      name: "",
-      Fname: "",
+      fname: "",
+      lname: "",
+      fathername: "",
       department: "",
       semester: "",
-      address: "",
+      PAddress: "",
+      RAddress: "",
       email: "",
       phone: "",
-      date: "",
+      dateFrom: "",
+      dateTo: "",
     },
   });
 
@@ -82,74 +103,89 @@ export default function MemberShipForm() {
     console.log("data", data);
   };
   return (
-    <Col md={7}>
-      <Row className="d-flex mb-3">
-        <Col md={12} lg={12} sm={12}>
-          <Heading heading="Library MemberShip Form" />
-        </Col>
-      </Row>
+    <>
+      <h4 style={{ marginTop: "19px", marginBottom: "58px" }}>
+        New Student Membership Form
+      </h4>
+      <h5 style={{ marginBottom: "60px" }}>Student Details:</h5>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Row className="g-2">
           <Input
-            placeholder="Your Name"
-            register={() => register("name")}
-            errors={errors.name}
+            label="First Name *"
+            register={() => register("fname")}
+            errors={errors.fname}
           />
           <Input
-            placeholder="Father Name"
-            register={() => register("Fname")}
-            errors={errors.Fname}
+            label="Last Name *"
+            register={() => register("lname")}
+            errors={errors.lastname}
           />
           <Input
-            placeholder="Department Name"
+            label="Father Name *"
+            register={() => register("fathername")}
+            errors={errors.fathername}
+          />
+          <Input
+            label="Department Name *"
             register={() => register("department")}
             errors={errors.department}
           />
           <Input
-            placeholder="Semester"
+            label="Semester *"
             register={() => register("semester")}
             errors={errors.semester}
           />
           <Input
-            placeholder="Enter Email"
+            label="Email *"
             register={() => register("email")}
             errors={errors.email}
+            format="example@gmail.com"
           />
           <Input
-            placeholder="Phone No"
+            label="Phone *"
             register={() => register("phone")}
             errors={errors.phone}
+            format="0000-1234567"
           />
-          <Input
-            placeholder="Residential Address"
-            register={() => register("address")}
-            errors={errors.address}
+          <AddressInput
+            label="Residential Adress *"
+            register={() => register("RAddress")}
+            errors={errors.RAddress}
           />
-          <Input
-            placeholder="Permanent Address"
-            register={() => register("address")}
-            errors={errors.address}
+          <AddressInput
+            label="Permanent Address *"
+            register={() => register("PAddress")}
+            errors={errors.PAddress}
           />
           <FormDate
-            placeholder="DD/MM/yy"
-            register={() => register("date")}
-            errors={errors.date}
+            register={() => register("dateFrom")}
+            errors={errors.dateFrom}
             label="Session From"
+            format="MM/DD/YYYY"
           />
           <FormDate
-            placeholder="DD/MM/yy"
-            register={() => register("date")}
-            errors={errors.date}
+            register={() => register("dateTo")}
+            errors={errors.dateTo}
             label="To"
+            format="MM/DD/YYYY"
           />
-          <button
-            className="btn btn-primary form-control py-2 text-white"
-            type="submit"
-          >
-            Submit
-          </button>
+        </Row>
+        <Row className="justify-content-center mt-3">
+          <Col md={3}>
+            <button
+              className="btn form-control"
+              style={{
+                color: "#fff",
+                borderColor: "#0a1551",
+                backgroundColor: "#0a1551",
+              }}
+              type="submit"
+            >
+              Submit
+            </button>
+          </Col>
         </Row>
       </Form>
-    </Col>
+    </>
   );
 }

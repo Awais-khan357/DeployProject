@@ -12,7 +12,6 @@ export default function CheckCounter() {
   const [staffCount, setStaffCount] = useState(0);
   const [bookCount, setBookCount] = useState(0);
   const [HoursCount, setHoursCount] = useState(0);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const incrementCount = (startValue, endValue, setCount) => {

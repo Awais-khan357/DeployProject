@@ -1,5 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
-import { Container, Row, Col } from "react-bootstrap";
+import { useLocation } from "react-router-dom";
+import { Container, Row } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
 import History from "./History";
@@ -10,17 +10,7 @@ import Rules from "./Rules";
 import FAQ from "./FAQ";
 import Introduction from "./Introduction";
 import Footer from "../Footer";
-import "../Links.css";
-
-const links = [
-  "History",
-  "Introduction",
-  "Rules Regulation",
-  "Timing",
-  "Staff",
-  "Faq",
-  "Contact",
-];
+import "./AboutLinks.css";
 
 export default function AboutLinks() {
   const location = useLocation();
@@ -54,31 +44,17 @@ export default function AboutLinks() {
   return (
     <>
       <Header />
-      <Container fluid className="about-link mt-4 px-4">
+      <Container fluid>
         <Row>
-          <Col md={3} className="mb-5">
-            <div className="nav-box">
-              <h4>About List</h4>
-              <nav className="main-nav">
-                <ul className="unstyled list-hover-slide">
-                  {links.map((link, index) => (
-                    <Link
-                      key={index}
-                      to={`/aboutLink?tab=${encodeURIComponent(link)}`}
-                    >
-                      <li
-                        className={`mt-2 ${
-                          selectedContent === link ? "active" : ""
-                        }`}
-                      >
-                        {link}
-                      </li>
-                    </Link>
-                  ))}
-                </ul>
-              </nav>
+          <div className="about-header py-4">
+            <div className="py-5">
+              <h1 className="text-white text-center mb-3">
+                {`${selectedContent}`}
+              </h1>
             </div>
-          </Col>
+          </div>
+        </Row>
+        <Row className="justify-content-md-center mt-5 aboutUs">
           {renderContent()}
         </Row>
       </Container>

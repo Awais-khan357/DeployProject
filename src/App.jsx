@@ -11,6 +11,7 @@ import VirtualTour from "./components/VirtualTour";
 import Facilities from "./components/Facilities";
 import Events from "./components/Events";
 import Museum from "./components/Museum";
+import HecCorner from "./components/HecCorner";
 function App() {
   return (
     <Router>
@@ -26,6 +27,7 @@ function App() {
         <Route path="/guideLine" element={<Guidelines />} />
         <Route path="/events" element={<Events />} />
         <Route path="/museum" element={<Museum />} />
+        <Route path="/heccorner" element={<HecCorner />} />
         <Route path="/virtualTour" element={<VirtualTour />} />
       </Routes>
     </Router>

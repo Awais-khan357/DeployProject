@@ -44,23 +44,19 @@ export default function CollectionLinks() {
 
   return (
     <>
-      <>
-        <Header />
-        <Container fluid>
-          <Row>
-            <div className="page-header py-4">
-              <div className="py-5">
-                <h1 className="text-white text-center mb-3">
-                  {`${selectedContent} Collection`}
-                </h1>
-              </div>
+      <Header />
+      <Container fluid>
+        <Row>
+          <div className="page-header py-4">
+            <div className="py-5">
+              <h1 className="text-white text-center mb-3">
+                {`${selectedContent} Collection`}
+              </h1>
             </div>
-          </Row>
-          <Row className="justify-content-md-center mt-5">
-            {renderContent()}
-          </Row>
-        </Container>
-      </>
+          </div>
+        </Row>
+        <Row className="justify-content-md-center mt-5">{renderContent()}</Row>
+      </Container>
     </>
   );
 }
